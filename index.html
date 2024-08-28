@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="app">
+        <div class="jumbotron">
+            <h1>To Do</h1>
+        </div>
+
+        <table id="table" v-if="items.length" class="table table-responsive-sm">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Actions</th>
+            </thead>
+            <tr>
+                <td></td>
+                <td><input v-model="name" type="text" placeholder="new item name.." class="form-control"></td>
+                <td><input v-model="description" type="text" placeholder="new item description.." class="form-control"></td>
+                <td><button class="btn btn-success" v-on:click="SaveItem(name, description)">Save</button></td>
+            </tr>
+            <tr v-for="item in items">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td><button class="btn btn-danger" v-on:click="DeleteItem(item.id)">Delete</button></td>
+            </tr>
+        </table>
+
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

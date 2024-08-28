@@ -1,0 +1,16 @@
+button{
+    width: 75px;
+}
+
+.jumbotron{
+    background-color: rgb(24, 76, 77);
+    color: white;
+    text-align: center;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    border-radius: 0;
+}
+
+table{
+    margin: 0 auto;
+    max-width: 800px;
+}
